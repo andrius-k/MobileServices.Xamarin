@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4A8E5436-C47C-4123-84FF-3DD598658176}</ProjectGuid>
+    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>MobileServices</RootNamespace>
+    <AssemblyName>MobileServices</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Profile111</TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="AkavacheSqliteLinkerOverride.cs" />
+    <Compile Include="ViewModels\ViewModelLocator.cs" />
+    <Compile Include="ViewModels\BooksViewModel.cs" />
+    <Compile Include="ViewModels\BookDetailsViewModel.cs" />
+    <Compile Include="ViewModels\ViewModel.cs" />
+    <Compile Include="ViewModels\AsyncState.cs" />
+    <Compile Include="Services\IBooksService.cs" />
+    <Compile Include="Services\BooksService.cs" />
+    <Compile Include="Services\ApiService.cs" />
+    <Compile Include="Services\IRestApi.cs" />
+    <Compile Include="Services\IApiService.cs" />
+    <Compile Include="DTOs\Book.cs" />
+    <Compile Include="DTOs\BookDetails.cs" />
+    <Compile Include="DTOs\VolumeInfo.cs" />
+    <Compile Include="DTOs\VolumeInfoDetails.cs" />
+    <Compile Include="Services\IBlobCacheService.cs" />
+    <Compile Include="Services\BlobCacheService.cs" />
+    <Compile Include="Extensions.cs" />
+    <Compile Include="Exceptions\ApiException.cs" />
+    <Compile Include="Services\SchedulerProvider.cs" />
+    <Compile Include="Services\ISchedulerProvider.cs" />
+    <Compile Include="DTOs\BooksResponse.cs" />
+    <Compile Include="BatchObservableCollection.cs" />
+    <Compile Include="SerialCancellationTokenSource.cs" />
+    <Compile Include="Services\INavigationService.cs" />
+    <Compile Include="Messages\NavigationMessage.cs" />
+    <Compile Include="DTOs\ImageLinks.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="project.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ViewModels\" />
+    <Folder Include="DTOs\" />
+    <Folder Include="Services\" />
+    <Folder Include="Exceptions\" />
+    <Folder Include="Messages\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+  <Import Project="..\packages\Refit.3.1.0\build\netstandard1.1\refit.targets" Condition="Exists('..\packages\Refit.3.1.0\build\netstandard1.1\refit.targets')" />
+</Project>

@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<resources>
+    <style name="MobileServicesTheme" parent="MobileServicesTheme.Base"></style>
+    
+    <!-- Base theme applied no matter what API -->
+    <style name="MobileServicesTheme.Base" parent="Theme.AppCompat.Light.NoActionBar">
+    </style>
+</resources>
